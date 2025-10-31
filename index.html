@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reporter alireza</title>
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    border: none;
+    outline: none;
+    font-family: Poppins, sans-serif;
+    color: #fff;
+}
+body {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-image: url(./-1.jpg);
+    background-size: cover;
+    background-position: center; */
+    direction: rtl;
+    overflow: hidden;
+      background: black;
+      font-family: 'Courier New', monospace;
+      color: #0F0;
+}
+.content {
+    width: 400px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(13px);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px 35px;
+height: 400px;
+}
+.content h2 {
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+}
+.content .input-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 30px 0;
+}
+.content .input-box input {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    padding: 20px 45px 20px 20px;
+    font-size: 16px;
+}
+input::placeholder {
+    color: #fff;
+    font-size: 16px;
+}
+.input-box i {
+    position: absolute;
+    top: 50%;
+    right: 18%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #fff;
+}
+.content .remember {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -16px 0 16px;
+}
+.remember label input {
+    accent-color: #fff;
+    margin-right: 4px;
+}
+.remember a {
+    color: #fff;
+    text-decoration: none;
+}
+.content h2 {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+.content .input-box {
+    position: relative;
+    width: 100%;
+    height: 55px;
+    margin: 30px 0;
+}
+.content .input-box input {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    padding: 20px 45px 20px 20px;
+    font-size: 16px;
+}
+.button a {
+    color: #fff;
+    font: 16px;
+    font-weight: 500;
+    text-decoration: none;
+}
+.button a i {
+    font-size: 20px;
+    margin-right: 8px;
+}
+.button a:hover {
+    opacity: 0.8;
+}
+input[type="checkbox"] {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+input::-webkit-credentials-auto-fill-button,
+input::-webkit-clear-button,
+input::-webkit-inner-spin-button,
+input::-webkit-contacts-auto-fill-button {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none;
+    height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+}
+.btnn {
+    display: inline-block;
+    background: #fff;
+    color: #0a2862;
+    width: 100%;
+    border-radius: 30px;
+    font-size: 16px;
+    height: 45px;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-bottom: 30px;
+    margin-top: 16px;
+}
+.button {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+/* .site-footer {
+    background-color: #1c1c1c;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .site-footer i {
+    color: #ff4c4c;
+    margin-left: 8px;
+  }
+
+  @media (max-width: 600px) {
+    .site-footer {
+      font-size: 12px;
+      padding: 15px;
+    }
+  } */
+  .toast {
+    position: fixed;
+    top: -100px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: top 0.6s ease, opacity 0.6s ease;
+    z-index: 9999;
+  }
+
+  .toast.show {
+    top: 20px;
+    opacity: 1;
+  }
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border: 1px solid #0F0;
+    border-radius: 10px;
+  }
+  input[type="text"], input[type="password"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    background: black;
+    border: 1px solid #0F0;
+    color: #0F0;
+    font-size: 16px;
+  }
+.select {
+text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <canvas id="matrix"></canvas>
+    <div class="content">
+        <form action="">
+            <h2>گزارش زن  علیرضا با ایدی @Ostore_Report در تلگرام</h2>
+            <div class="input-box">
+                <input type="text" placeholder="target username" required />
+                <i class="ri-user-fill"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="password" placeholder="password" required autocomplete="new-password" />
+                    <i class="ri-eye-off-fill toggle-password" id="togglepassword"></i>
+                 <button type="submit" class="btnn" onclick="showToast()">send report</button>
+                <div id="toast" class="toast">✅ گزارش شما با موفقیت ارسال شد</div>
+                <div class="button">
+  <div class="select">
+<label>اپلیکیشن را تعیین کنید:</label>
+                 <select>
+                  <option>Rubika</option>
+
+                     <option>shad</option>
+   <option>splus</option>
+<option>Telegram</option>
+                    <!-- <a href="#"><i class="re-google-fill"></i>Google</a>--<a href="#">
+                        <i class="re-Facebook-fill"></i> Facebook
+                        </a> -->
+                </div>
+        </form>
+    </div>
+    <script>
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const letters = '01';
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#0F0';
+      ctx.font = fontSize + 'px monospace';
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    setInterval(drawMatrix, 50);
+    </script>
+    <script>
+        
+        function showToast() {
+      const toast = document.getElementById("toast");
+      toast.classList.add("show");
+
+      // بعد از 5 ثانیه مخفی میشه
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 5000);
+    }
+        const input =  document.getElementById("password");
+        const toggle =  document.getElementById("togglePassword");
+        toggle.addEventListener("click", () => {
+            const isPassword = input.type = "password";
+            input.type = isPassword ? "text" : "password";
+            toggle.className = isPassword
+            ? "re-eye-fill toggle-password"
+            : "re-eye-off-fill toggle-password"
+        });
+    </script>
+</body>
+<!-- <footer class="site-footer">
+  <p><i class="fas fa-ban"></i> تمامی حقوق محفوظ است - کپی‌برداری ممنوع © 2025</p>
+</footer> -->
+</html>
